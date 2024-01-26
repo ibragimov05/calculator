@@ -243,7 +243,6 @@ class Calculator(QMainWindow):
                 box += "."
             else:
                 box += equation[i]
-        print(box)
         try:
             ans = eval(box)
             self.little_result.setText(str(ans))
@@ -324,11 +323,11 @@ class Calculator(QMainWindow):
         # oxirgi kiritilgan sonni o'zgartirish
         except:
             try:
-                if int(text[box + 1 :]) > 0:
-                    text = text[: box + 1] + "-" + text[box + 1 :]
+                if int(text[box + 1:]) > 0:
+                    text = text[: box + 1] + "-" + text[box + 1:]
                     self.label.setText(str(text))
                 else:
-                    text = text[: box + 1] + text[box + 1 :]
+                    text = text[: box + 1] + text[box + 1:]
                     self.label.setText(str(text))
                 self.little_label_calculation()
 
